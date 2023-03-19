@@ -41,7 +41,29 @@
 				"ms-python.python",
 				"ms-python.vscode-pylance",
         		"GitHub.copilot"
-			]
+			],
+			"configurations": [
+				{
+				    "name": "Python: FastAPI",
+				    "type": "python",
+				    "request": "launch",
+				    "module": "uvicorn",
+				    "env": {
+					"db_username": "postgres",
+					"db_password": "secret",
+					"host_server": "localhost",
+					"database_name": "fastapi",
+					"ssl_mode": "prefer",
+					"db_server_port": "5432"
+				    },
+				    "args": [
+					"main:app",
+					"--reload",
+					"--port",
+					"8000"
+				    ]
+				}
+    ]
 		}
 	},
 
